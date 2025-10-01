@@ -2,10 +2,10 @@ import streamlit as st
 import numpy as np
 import sympy as sp
 import matplotlib.pyplot as plt
-from methods.newton import NewtonRaphson
-from methods.bisection import Bisection
-from methods.secant import Secant
-from methods.falseposition import FalsePosition
+from newton import NewtonRaphson
+from bisection import Bisection
+from secant import Secant
+from falseposition import FalsePosition
 
 
 st.title("Numerical Methods Playground")
@@ -31,7 +31,7 @@ elif method == "Secant":
 else:
     a = st.number_input("Interval a:", value=1.0)
     b = st.number_input("Interval b:", value=3.0)
-    root, steps = (f, a, b)
+    root, steps = FalsePosition(f, a, b)
 
 st.subheader("Iterations")
 st.write(steps)
