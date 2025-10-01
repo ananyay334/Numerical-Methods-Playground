@@ -6,7 +6,7 @@ def FalsePosition(func,x0,x1,maxiter,tol):
             break
         xr=x1-(func(x1)*(x1-x0))/(func(x1)-func(x0))
         count+=1
-        x.append(count,xr,func(xr))
+        x.append((count,xr,func(xr)))
         if(abs(xr-x1)<tol):
             break
         if(func(xr)*func(x0)<0):

@@ -8,7 +8,7 @@ def Bisection(func,x0,x1,maxiter,tol):
     for i in range(maxiter):
         xr=x0+(x1-x0)/2
         count+=1
-        x.append(count,xr,func(xr))
+        x.append((count,xr,func(xr)))
         if(abs(xr-x1)<tol):
             break
         if(func(xr)*func(x0)<0):
